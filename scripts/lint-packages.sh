@@ -128,7 +128,7 @@ check_indentation() {
 # - Or specify one of the CI skip tags
 check_version_change() {
 	local base_commit commit_diff package_dir="${1%/*}"
-	base_commit="$(< "$TERMUX_SCRIPTDIR/.git/refs/remotes/origin/master")"
+	base_commit="$(< "$TERMUX_SCRIPTDIR/.git/refs/remotes/origin/add-chawan")"
 
 	[[ -z "$base_commit" ]] && {
 		echo
