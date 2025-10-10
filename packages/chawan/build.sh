@@ -5,7 +5,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.2.2"
 TERMUX_PKG_SRCURL="https://git.sr.ht/~bptato/chawan/archive/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=30b4108247244f6b0721d44f84ba90cebf8ce5892ed9502d7e7c3fed92f65489
-TERMUX_PKG_BUILD_DEPENDS="nim,openssl,libssh2,brotli,pkg-config,make"
+TERMUX_PKG_BUILD_DEPENDS="nim,openssl,libssh2,brotli,pkg-config,make,ndk-sysroot"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
 
