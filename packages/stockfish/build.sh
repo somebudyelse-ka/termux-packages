@@ -9,6 +9,6 @@ TERMUX_PKG_SRCURL=https://github.com/official-stockfish/Stockfish/archive/refs/t
 TERMUX_PKG_SHA256=0cfd9396438798cc68f5c0d5fa0bb458bb8ffff7de06add841aaeace86bec1f1
 
 termux_step_make () {
-    cd src
-    make -j profile-build COMP=clang
+	cd src
+	make -j profile-build COMP=clang
 }
