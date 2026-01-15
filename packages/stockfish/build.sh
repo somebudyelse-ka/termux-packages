@@ -9,10 +9,10 @@ TERMUX_PKG_SHA256=0cfd9396438798cc68f5c0d5fa0bb458bb8ffff7de06add841aaeace86bec1
 
 termux_step_make () {
 	cd src
-	TARGET_ARCH=$(echo -n "$TERMUX_ARCH" | sed -e 's/^aarch64$/armv8/' \
-                   -e 's/^arm$/armv7/' \
-                   -e 's/^x86_64$/x86-64/' \
-                   -e 's/^i686$/x86-32/')
+	TARGET_ARCH=$(echo -n "$TERMUX_ARCH" | sed  -e 's/^aarch64$/armv8/' \
+												-e 's/^arm$/armv7/' \
+												-e 's/^x86_64$/x86-64/' \
+												-e 's/^i686$/x86-32/')
 	make net
 	make -j build ARCH=$TARGET_ARCH COMP=ndk
 	make strip ARCH=$TARGET_ARCH COMP=ndk
