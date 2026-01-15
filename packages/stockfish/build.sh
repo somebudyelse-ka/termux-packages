@@ -14,7 +14,7 @@ termux_step_make () {
 					-e 's/^x86_64$/x86-64/' \
 					-e 's/^i686$/x86-32/')
 	make net
-	if [[$TERMUX_ARCH == "arm"]]; then
+	if [[ "$TERMUX_ARCH" == "arm" ]]; then
 		echo "its arm.sanity check complete."
 		make -j build ARCH=$TARGET_ARCH COMP=ndk CXX=armv7a-linux-androideabi21-clang++
 		make strip ARCH=$TARGET_ARCH COMP=ndk CXX=armv7a-linux-androideabi21-clang++
