@@ -26,3 +26,7 @@ termux_step_make () {
 	make -j build ARCH=$TARGET_ARCH COMP=ndk CXX=$CXX
 	make strip ARCH=$TARGET_ARCH COMP=ndk CXX=$CXX
 }
+
+termux_step_make_install() {
+	install -Dm755 "$TERMUX_PKG_SRCDIR/src/stockfish" "$TERMUX_PREFIX/bin/stockfish"
+}
