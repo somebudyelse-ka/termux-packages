@@ -19,9 +19,9 @@ termux_step_make () {
 	esac
 	make net
 	local CXX
- 	if [[ "$TERMUX_ARCH" == "arm" ]]; then 
- 		CXX="armv7a-linux-androideabi$TERMUX_PKG_API_LEVEL" 
- 	fi
+	if [[ "$TERMUX_ARCH" == "arm" ]]; then 
+		CXX="armv7a-linux-androideabi$TERMUX_PKG_API_LEVEL-clang++" 
+	fi
 	make -j build ARCH=$TARGET_ARCH COMP=ndk
 	make strip ARCH=$TARGET_ARCH COMP=ndk
 }
