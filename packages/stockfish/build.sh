@@ -11,16 +11,16 @@ termux_step_make () {
 	cd src
 	local TARGET_ARCH
 	case "$TERMUX_ARCH" in
-		'aarch64') TARGET_ARCH='armv8';; 
-		'arm')     TARGET_ARCH='armv7';; 
-		'x86_64')  TARGET_ARCH='x86-64';; 
-		'i686')    TARGET_ARCH='x86-32';; 
-		*) termux_error_exit "Architecture not supported by build system" 
+		'aarch64') TARGET_ARCH='armv8';;
+		'arm')     TARGET_ARCH='armv7';;
+		'x86_64')  TARGET_ARCH='x86-64';;
+		'i686')    TARGET_ARCH='x86-32';;
+		*) termux_error_exit "Architecture not supported by build system"
 	esac
 	make net
 	local CXX
-	if [[ "$TERMUX_ARCH" == "arm" ]]; then 
-		CXX="armv7a-linux-androideabi$TERMUX_PKG_API_LEVEL-clang++" 
+	if [[ "$TERMUX_ARCH" == "arm" ]]; then
+		CXX="armv7a-linux-androideabi$TERMUX_PKG_API_LEVEL-clang++"
 	fi
 	make -j build ARCH=$TARGET_ARCH COMP=ndk
 	make strip ARCH=$TARGET_ARCH COMP=ndk
